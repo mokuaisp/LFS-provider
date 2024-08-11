@@ -1,0 +1,13 @@
+[Unit]
+Description=MCSManager Web
+
+[Service]
+User=mcsmanager
+WorkingDirectory=homemcsmanagermcsmanagerweb
+ExecStart=homemcsmanagerbinnode app.js
+ExecReload=binkill -s HUP $MAINPID
+ExecStop=binkill -s QUIT $MAINPID
+Environment=PATH=homemcsmanagerbinusrlocalsbinusrlocalbinusrsbinusrbinsbinbin
+
+[Install]
+WantedBy=multi-user.target
